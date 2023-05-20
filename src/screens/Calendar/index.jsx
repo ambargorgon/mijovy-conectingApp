@@ -5,8 +5,6 @@ import styles from './style'
 const Calendar = ({navigation}) => {
   return (
     <View style={styles.container}> 
-      <Text style={styles.text}>Calendar</Text>
-      <Button title="Navegar a Profile" onPress={()=> navigation.navigate("Profile")}/>
     </View>
   )
 }

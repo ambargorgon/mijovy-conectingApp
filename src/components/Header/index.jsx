@@ -1,4 +1,4 @@
-import { View,  Text} from 'react-native'
+import { SafeAreaView,  Text} from 'react-native'
 import React from 'react'
 import styles  from './styles'
 import { useFonts } from "expo-font";
@@ -12,10 +12,9 @@ const Header = ({ newStyles}) => {
   if (!loaded) return;
 
   return (
-    <View style={{...styles.container, ...newStyles}}>
-      {/* <Image style={styles.image} source={require("../../assets/logo-name.png")}/> */}
+    <SafeAreaView style={{...styles.container, ...newStyles}}>
       <Text style={{...styles.text, ...newStyles}}>MIJOVY</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 

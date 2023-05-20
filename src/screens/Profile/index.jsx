@@ -1,13 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import styles from './style'
+import { View, Text } from "react-native";
+import React from "react";
+import styles from "./style";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

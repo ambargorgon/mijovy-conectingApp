@@ -1,20 +1,21 @@
-// SEARCH
+// ACTIVITIES
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import colors from "../../../constants/colors";
 
 const styles = StyleSheet.create({
 
   container: {
     flex: 1,
     alignItems: "center",
-    paddingBottom: 10,
+    paddingBottom: 25,
     marginBottom: 50,
     backgroundColor: colors.terciary,
     alignItems: "center",
   },
   categoriesContainer: {
     padding: 10,
-    height: 130,
+    height: 430,
+    width: 360,
   },
   text: {
     fontSize: 18,

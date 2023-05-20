@@ -1,14 +1,15 @@
 import { View, Text, FlatList } from "react-native";
 import React from "react";
-import styles from "./style";
-import { Categorias } from "../../data/Categorias";
-import Category from "../../components/Category";
+import ActivitiesList from "../../../data/ActivitiesList";
+import Product from "../../../components/Product";
+import styles from "./styles";
 
-const Search = ({ navigation }) => {
+const Activities = ({ navigation, route }) => {
 
-
+  const filterActivities = ActivitiesList.filter(act => act.category === route.params.categoryId)
+  
   const handleSelectedCategory = (item) => {
-    navigation.navigate("Activities", {
+    navigation.navigate("Detail", {
       categoryId: item.id,
       name: item.title,
     });
@@ -16,14 +17,14 @@ const Search = ({ navigation }) => {
 
   const renderCategories = ({ item }) => (
     <View style={styles.categoriesContainer}>
-      <Category item={item} onSelected={handleSelectedCategory} />
+      <Product item={item} onSelected={handleSelectedCategory} />
     </View>
   );
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={Categorias}
+        data={filterActivities}
         renderItem={renderCategories}
         keyExtractor={(item) => item.id}
       />
@@ -31,4 +32,4 @@ const Search = ({ navigation }) => {
   );
 };
 
-export default Search;
+export default Activities;

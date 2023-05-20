@@ -1,36 +1,20 @@
-import { StyleSheet, SafeView } from "react-native";
-// import Header from "./src/components/Header";
-import colors from "./src/constants/colors";
 import { useFonts } from "expo-font";
-// import Home from "./src/screens/Home";
-import Navigator from "./src/navigation/Navigator";
-
+import BottomNavigator from "./src/navigation/BottomNavigator";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
-  // const [loaded] = useFonts({
-  //   titleFont: require("./src/assets/fonts/JMHPsychedelicCAPS.ttf"),
-  // });
+  const [loaded] = useFonts({
+    titleFont: require("./src/assets/fonts/JMHPsychedelicCAPS.ttf"),
+    leagueSpartanBold: require("./src/assets/fonts/LeagueSpartan-Bold.ttf"),
+    leagueSpartan: require("./src/assets/fonts/LeagueSpartan-Regular.ttf"),
+    leagueSpartanSemiBold: require("./src/assets/fonts/LeagueSpartan-SemiBold.ttf"),
+  });
 
-  // if (!loaded) return;
+  if (!loaded) return;
 
   return (
-    <Navigator />
-    // <SafeView style={styles.container}>
-    //   <Header newStyles={styles.text} />
-    //   <Home />
-    // </SafeView> 
+    <NavigationContainer>
+      <BottomNavigator />
+    </NavigationContainer>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: colors.primary,
-//     alignItems: "center",
-//     gap: 10,
-//     justifyContent: "flex-start",
-//   },
-//   text: {
-//     fontFamily: "titleFont",
-//   },
-// });
