@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Search from "../screens/Search";
 import Activities from "../screens/Search/Activities";
 import colors from "../constants/colors";
+import Detail from "../screens/Search/Detail";
 
 const CategoryNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -14,6 +15,9 @@ const CategoryNavigator = () => {
     >
       <Stack.Screen name="Categories" component={Search}/>
       <Stack.Screen name="Activities" component={Activities}  options={({route})=>(
+        {  title: route.params.name} 
+        ) }/>
+      <Stack.Screen name="Detail" component={Detail}  options={({route})=>(
         {  title: route.params.name} 
         ) }/>
     </Stack.Navigator>

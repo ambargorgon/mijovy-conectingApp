@@ -10,8 +10,9 @@ const Activities = ({ navigation, route }) => {
   
   const handleSelectedCategory = (item) => {
     navigation.navigate("Detail", {
-      categoryId: item.id,
+      activity: item,
       name: item.title,
+      image: item.image
     });
   };
 
