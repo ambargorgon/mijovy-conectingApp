@@ -1,15 +1,19 @@
 import { View, Text, FlatList } from "react-native";
 import React from "react";
 import styles from "./style";
-import { Categorias } from "../../data/Categorias";
 import Category from "../../components/Category";
+import { useSelector, useDispatch} from "react-redux";
+import { selectedCategory } from "../../store/actions/category.action";
 
 const Search = ({ navigation }) => {
 
+  const categories = useSelector((state) => state.categories.categorias)
+  const dispatch = useDispatch();
+
 
   const handleSelectedCategory = (item) => {
+    dispatch(selectedCategory(item.id))
     navigation.navigate("Activities", {
-      categoryId: item.id,
       name: item.title,
     });
   };
@@ -23,7 +27,7 @@ const Search = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={Categorias}
+        data={categories}
         renderItem={renderCategories}
         keyExtractor={(item) => item.id}
       />

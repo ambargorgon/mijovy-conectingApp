@@ -7,7 +7,7 @@ const Product = ({ item, onSelected }) => {
     <View style={styles.categoriesItem}>
       <TouchableOpacity style={styles.container} onPress={() => onSelected(item)}>
         <View style={styles.imageContainer}>
-          <Image style={styles.image}source={{uri: item.image}}/>
+          <Image style={styles.image} source={{uri: item.image}}/>
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.text}>{item.title}</Text>
@@ -16,5 +16,7 @@ const Product = ({ item, onSelected }) => {
     </View>
   );
 };
+
+
 
 export default Product;
