@@ -3,6 +3,7 @@ import Search from "../screens/Search";
 import Activities from "../screens/Search/Activities";
 import colors from "../constants/colors";
 import Detail from "../screens/Search/Detail";
+import Inscripcion from "../screens/Search/Inscripcion";
 
 const CategoryNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -18,6 +19,9 @@ const CategoryNavigator = () => {
         {  title: route.params.name} 
         ) }/>
       <Stack.Screen name="Detail" component={Detail}  options={({route})=>(
+        {  title: route.params.name} 
+        ) }/>
+      <Stack.Screen name="Inscription" component={Inscripcion}  options={({route})=>(
         {  title: route.params.name} 
         ) }/>
     </Stack.Navigator>

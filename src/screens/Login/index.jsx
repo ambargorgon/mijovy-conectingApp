@@ -1,37 +1,39 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, KeyboardAvoidingView } from "react-native";
 import React from "react";
 import styles from "./style";
 import Card from "../../components/Card";
 
 const index = ({ newStyles }) => {
   return (
-    <View style={styles.container}>
-      <Text style={{ ...styles.text, ...newStyles }}>MIJOVY</Text>
-      <View style={styles.inputContainer}>
-        <TextInput placeholder="Email o Usuario" style={styles.input} />
-        <TextInput
-          placeholder="Contraseña"
-          secureTextEntry={true}
-          style={styles.input}
-        />
-        <Card otherStyles={styles.card}>
-          <Text style={styles.cardText}>Iniciar Sesion</Text>
-        </Card>
-      </View>
-      <Text style={styles.passwordText}>Olvidaste tu Contraseña?</Text>
-      <View style={styles.signIn}>
-        <View style={styles.questionText}>
-          <Text>Primera Vez?</Text>
-          <Text>Registrate</Text>
+    <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={50}>
+      <View style={styles.container}>
+        <Text style={{ ...styles.text, ...newStyles }}>MIJOVY</Text>
+        <View style={styles.inputContainer}>
+          <TextInput placeholder="Email" style={styles.input} />
+          <TextInput
+            placeholder="Contraseña"
+            secureTextEntry={true}
+            style={styles.input}
+          />
+          <Card otherStyles={styles.card}>
+            <Text style={styles.cardText}>Registrate</Text>
+          </Card>
         </View>
-        <Card otherStyles={styles.mediaCard}>
+        <Text style={styles.passwordText}>Olvidaste tu Contraseña?</Text>
+        <View style={styles.signIn}>
+          <View style={styles.questionText}>
+            <Text>Ya eres usuario?</Text>
+            <Text>Inicia Sesion</Text>
+          </View>
+          <Card otherStyles={styles.mediaCard}>
             <Text style={styles.signInText}>Ingresar con Google</Text>
-        </Card>
-        <Card otherStyles={styles.mediaCard}>
+          </Card>
+          <Card otherStyles={styles.mediaCard}>
             <Text style={styles.signInText}>Ingresar con Facebook</Text>
-        </Card>
+          </Card>
+        </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
