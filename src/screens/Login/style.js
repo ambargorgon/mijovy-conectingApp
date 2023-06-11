@@ -1,20 +1,20 @@
 // LOGIN
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.primary,
+    backgroundColor: Colors.primary,
     alignItems: "center",
     padding: 50,
     gap: 20,
   },
   text: {
     fontSize: 100,
-    paddingTop: 60,
-    color: colors.white,
-    textShadowColor: colors.black,
+    paddingTop: 100,
+    color: Colors.secondary,
+    textShadowColor: Colors.black,
     textShadowOffset: { width: 1, height: 5 },
     textShadowRadius: 20,
     fontFamily: 'titleFont'
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "90%",
-    borderBottomColor: colors.black,
+    borderBottomColor: Colors.black,
     borderBottomWidth: 1.3,
     paddingLeft: 10,
     marginBottom: 3.5,
@@ -36,12 +36,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 12,
     width: "65%",
+    backgroundColor: Colors.white,
   },
   cardText: {
     fontSize: 18,
   },
-  passwordText: {
-    color: colors.white,
+  logIn: {
+    color: Colors.white,
     textDecorationLine: "underline",
     fontSize: 12,
   },
@@ -61,6 +62,13 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 30,
     
+  },
+  mediaContainer: {
+    marginTop: 100,
+    flexDirection: "column",
+    gap: 20,
+    width: "100%",
+    alignItems: "center"
   },
   signInText: {
     fontSize: 16,

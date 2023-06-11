@@ -1,6 +1,6 @@
 //HEADER
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
     container: {
@@ -8,15 +8,15 @@ const styles = StyleSheet.create({
       width: '100%',
       padding: 20,
       paddingBottom: 1, 
-      backgroundColor: colors.secondary,
+      backgroundColor: Colors.secondary,
       justifyContent: "flex-end",
       alignItems: 'flex-start',
     },
     text: {
-      color: colors.primary,
+      color: Colors.primary,
       fontFamily: "titleFont",
       fontSize: 40,
-      textShadowColor: colors.white,
+      textShadowColor: Colors.white,
       textShadowOffset: {width: 1, height: 1},
       textShadowRadius: 1,
     }

@@ -6,7 +6,7 @@ const initial_state = {
 };
 
 const sumTotal = list => {
-    list.map((item) => item.quantity * item.price).reduce((a, b) => a + b, 0);
+    return list.map((item) => item.quantity * item.price).reduce((a, b) => a + b, 0);
 };
 
 const inscriptionReducer = (state = initial_state, action) => {

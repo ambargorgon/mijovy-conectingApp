@@ -1,16 +1,16 @@
 // CALENDAR
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: colors.fourth,
+        backgroundColor: Colors.fourth,
         alignItems: 'center',
         paddingTop: 40,
     },
     text:{
-        color: colors.black,
+        color: Colors.black,
         fontFamily: 'titleFont',
         fontSize: 30,
     }

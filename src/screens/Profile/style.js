@@ -1,15 +1,15 @@
 // PROFILE
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: colors.black,
+        backgroundColor: Colors.black,
         alignItems: 'center'
     },
     text:{
-        color: colors.white,
+        color: Colors.white,
         fontFamily: 'titleFont',
         fontSize: 30,
     }

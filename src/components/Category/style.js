@@ -1,13 +1,13 @@
 // CATEGORY
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 
 const styles =  StyleSheet.create({
     categoriesItem: {
         flex: 1, 
         borderRadius: 10,
-        shadowColor: colors.black,
+        shadowColor: Colors.black,
         shadowOpacity: 0.2,
         shadowOffset: {width: 3, height:2},
         shadowRadius: 10,
@@ -15,7 +15,7 @@ const styles =  StyleSheet.create({
         justifyContent:"center",
     },
     container: {
-        backgroundColor: colors.primary,
+        backgroundColor: Colors.primary,
         flexDirection: 'row',
         flex: 1,
         alignItems: 'center',
@@ -35,7 +35,7 @@ const styles =  StyleSheet.create({
         alignItems: 'center',
     },
     text:{
-        color: colors.white,
+        color: Colors.white,
         fontSize: 18,
     }
 })

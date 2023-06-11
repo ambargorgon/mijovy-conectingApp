@@ -31,7 +31,7 @@ export const confirm_items = (items, total) => {
       const result = await response.json();
       console.log(result);
       dispatch({
-        type: CONFIRM_CART,
+        type: CONFIRM_ITEMS,
         confirm: true,
       });
     } catch (error) {

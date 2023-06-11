@@ -1,16 +1,16 @@
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
     container:{
         width: '30%',
-        backgroundColor: colors.white,
+        backgroundColor: Colors.white,
         maxWidth: '80%',
         padding: 20,
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-        shadowColor: colors.black,
+        shadowColor: Colors.black,
         shadowOffset: {width: 0, height: 2},
         shadowRadius: 10,
         shadowOpacity: 0.3,

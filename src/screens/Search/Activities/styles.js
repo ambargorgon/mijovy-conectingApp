@@ -1,6 +1,6 @@
 // ACTIVITIES
 import { StyleSheet } from "react-native";
-import colors from "../../../constants/colors";
+import Colors from "../../../constants/Colors";
 
 const styles = StyleSheet.create({
 
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingBottom: 25,
     marginBottom: 50,
-    backgroundColor: colors.terciary,
+    backgroundColor: Colors.terciary,
     alignItems: "center",
   },
   categoriesContainer: {
@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color: colors.white,
+    color: Colors.white,
     fontFamily: "titleFont",
     fontSize: 30,
   },
   titleText:{
     fontSize: 20,
-    color: colors.white,
+    color: Colors.white,
     alignSelf: 'flex-start',
     paddingLeft: 20,
     fontWeight: "bold",

@@ -1,6 +1,6 @@
 //HOME 
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
     text: {
@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: colors.primary,
+        backgroundColor: Colors.primary,
         alignItems: "center",
         gap: 10,
         justifyContent: "flex-start",

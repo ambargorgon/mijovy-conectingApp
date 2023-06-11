@@ -5,7 +5,7 @@ import Calendar from "../screens/Calendar";
 import Profile from "../screens/Profile";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StyleSheet, View } from "react-native";
-import colors from "../constants/colors";
+import Colors from "../constants/Colors";
 import CategoryNavigator from "./CategoryNavigator";
 
 const BottomNavigator = () => {
@@ -20,8 +20,8 @@ const BottomNavigator = () => {
         headerTitleStyle: styles.logoHeaderTitleStyle,
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBar,
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.black,
+        tabBarActiveTintColor: Colors.primary,
+        tabBarInactiveTintColor: Colors.black,
       }}
     >
       <Bottom.Screen
@@ -72,12 +72,12 @@ export default BottomNavigator;
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     borderTopEndRadius: 10,
     borderTopStartRadius: 10,
     height: 65,
     position: "absolute",
-    shadowColor: colors.black,
+    shadowColor: Colors.black,
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.2,
     shadowRadius: 5,
@@ -86,14 +86,14 @@ const styles = StyleSheet.create({
   logoHeaderTitleStyle:{
     fontFamily: "titleFont",
     fontSize: 35,
-    color: colors.primary
+    color: Colors.primary
   },
   headerTitleStyle: {
-    color: colors.primary,
+    color: Colors.primary,
     fontFamily: "leagueSpartanBold",
     fontSize: 25,
   },
   headerStyle: {
-    backgroundColor: colors.secondary,
+    backgroundColor: Colors.secondary,
   },
 });

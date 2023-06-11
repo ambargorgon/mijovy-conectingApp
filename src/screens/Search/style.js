@@ -1,6 +1,6 @@
 // SEARCH
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
 
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingBottom: 10,
     marginBottom: 50,
-    backgroundColor: colors.terciary,
+    backgroundColor: Colors.terciary,
     alignItems: "center",
   },
   categoriesContainer: {
@@ -18,17 +18,31 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color: colors.white,
+    color: Colors.white,
     fontFamily: "titleFont",
     fontSize: 30,
   },
   titleText:{
     fontSize: 20,
-    color: colors.white,
+    color: Colors.white,
     alignSelf: 'flex-start',
     paddingLeft: 20,
     fontWeight: "bold",
     paddingBottom: 4,
+  },
+  mapButton:{
+    paddingHorizontal: 70,
+    paddingVertical: 15,
+    backgroundColor: Colors.white,
+    borderRadius: 35,
+    marginVertical: 20,
+    flexDirection: "row",
+    justifyContent:'space-between',   
+    alignItems: 'center',
+    gap: 6,
+  },
+  buttonText:{
+    fontSize: 18,
   }
 });
 

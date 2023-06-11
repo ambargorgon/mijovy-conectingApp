@@ -1,20 +1,20 @@
 // PRODUCT
 import { StyleSheet } from "react-native";
-import colors from "../../constants/colors";
+import Colors from "../../constants/Colors";
 
 
 const styles =  StyleSheet.create({
     categoriesItem: {
         flex: 1, 
         borderRadius: 10,
-        shadowColor: colors.black,
+        shadowColor: Colors.black,
         shadowOpacity: 0.2,
         shadowOffset: {width: 3, height:2},
         shadowRadius: 10,
         elevation: 5,
     },
     container: {
-        backgroundColor: colors.fourth,
+        backgroundColor: Colors.fourth,
         flexDirection: 'column',
         flex: 1,
         justifyContent: 'center',
@@ -41,7 +41,7 @@ const styles =  StyleSheet.create({
         height: "100%"
     },
     text:{
-        color: colors.black,
+        color: Colors.black,
         fontSize: 18,
     }
 })
