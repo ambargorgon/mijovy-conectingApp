@@ -5,9 +5,8 @@ import { StyleSheet } from "react-native";
 import { add_item } from "../../../store/actions/inscription.action";
 import { useDispatch } from "react-redux";
 
-const Detail = ({ navigation }) => {
+const Detail = ({ navigation, product }) => {
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.activities.selected);
 
   const handleAddItem = () => {
     dispatch(add_item(product));
@@ -19,7 +18,7 @@ const Detail = ({ navigation }) => {
 
   return (
     <View>
-      <Image style={styles.image} source={{ uri: product.image }} />
+      {/* <Image style={styles.image} source={{ uri: product.image }} /> */}
       <Text>{product.title}</Text>
       <Text>${product.price} el mes</Text>
       <Button title="Agregar al carrito" onPress={handleAddItem} />

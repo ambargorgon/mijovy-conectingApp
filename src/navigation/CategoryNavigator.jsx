@@ -5,6 +5,7 @@ import Colors from "../constants/Colors";
 import Detail from "../screens/Search/Detail";
 import Inscripcion from "../screens/Search/Inscripcion";
 import Locations from "../screens/Search/Locations";
+import Offers from "../screens/Search/Offers";
 
 const CategoryNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -15,11 +16,14 @@ const CategoryNavigator = () => {
         headerTitleStyle: { color: Colors.primary, fontFamily: "leagueSpartanBold" , fontSize: 25, },
       }}
     >
-      <Stack.Screen name="Categories" component={Search}/>
+      <Stack.Screen name="Categories" component={Search} options={{title:"Categorias"}}/>
       <Stack.Screen name="Mapa" component={Locations}/>
       <Stack.Screen name="Activities" component={Activities}  options={({route})=>(
         {  title: route.params.name} 
         ) }/>
+        <Stack.Screen name="Offers" component={Offers}  options={({route})=>(
+          {  title: route.params.name} 
+          ) }/>
       <Stack.Screen name="Detail" component={Detail}  options={({route})=>(
         {  title: route.params.name} 
         ) }/>

@@ -1,23 +1,21 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Colors from "../constants/Colors";
-import Login from "../screens/Login";
+import LogIn from "../screens/Auth/LogIn";
+import SignIn from "../screens/Auth";
 
 const Stack = createNativeStackNavigator();
 export default AuthNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="SignIn"
       screenOptions={{
-        headerShown: false,
+        headerTransparent: true,
         headerShadowVisible: false,
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
-        headerStyle: { backgroundColor: Colors.secondary },
-        headerTitleStyle: { color: Colors.primary, fontFamily: "leagueSpartanBold" , fontSize: 25, },
+        headerTitleStyle:{color: Colors.primary}
       }}
     >
-      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="LogIn" component={LogIn} />
     </Stack.Navigator>
   );
 };

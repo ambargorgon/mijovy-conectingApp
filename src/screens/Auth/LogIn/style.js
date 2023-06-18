@@ -1,6 +1,6 @@
-// LOGIN
+// LogIn
 import { StyleSheet } from "react-native";
-import Colors from "../../constants/Colors";
+import Colors from "../../../constants/Colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   text: {
-    fontSize: 100,
+    fontSize: 80,
     paddingTop: 100,
     color: Colors.secondary,
     textShadowColor: Colors.black,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   cardText: {
     fontSize: 18,
   },
-  logIn: {
+  SignIn: {
     color: Colors.white,
     textDecorationLine: "underline",
     fontSize: 12,

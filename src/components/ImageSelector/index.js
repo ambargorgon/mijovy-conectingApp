@@ -52,14 +52,10 @@ const ImageSelector = (props) => {
 export default ImageSelector;
 
 const styles = StyleSheet.create({
-  container: {
-    marginBottom: 10,
-  },
   preview: {
     elevation: 1,
     width: 80,
     height: 80,
-    marginBottom: 10,
     justifyContent: "center",
     alignItems: "center",
     borderColor: Colors.terciary,

@@ -27,7 +27,7 @@ const ActivitiesList = [
         price: 500,
         id: 4,
         category: 3,
-        title: 'Clases de Hip Hop para niños',
+        title: 'Clases de Hip Hop',
         image: 'https://www.canberratimes.com.au/images/transform/v1/crop/frm/187038826/67eab7d6-ae3e-493f-a9a2-3c125acd85d6.jpg/r304_152_5168_2582_w5472_h2734_fmax.jpg'
     },
     { 
@@ -42,14 +42,14 @@ const ActivitiesList = [
         price: 500,
         id: 6,
         category: 4,
-        title: 'Ceramica para adultos',
+        title: 'Ceramica',
         image: "https://media.revistaad.es/photos/60c74842589517c2edfd085f/master/w_1600%2Cc_limit/178313.jpg",
     },
     {    
         price: 500,
         id: 7,
         category: 4,
-        title: 'Pintura para niños',
+        title: 'Pintura',
         image: "https://endorphine-art.com/wp-content/uploads/2021/08/211428913_1206445529781138_4455691162850699828_n-1024x759.jpg",
     },
     {    
@@ -63,7 +63,7 @@ const ActivitiesList = [
         price: 500,
         id: 9,
         category: 5,
-        title: 'Violin para niños',
+        title: 'Clases de Violin',
         image: "https://todoviolin.files.wordpress.com/2022/01/aprender-violin.jpeg?w=760",
     },
     {    

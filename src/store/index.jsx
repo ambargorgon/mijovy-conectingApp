@@ -4,14 +4,14 @@ import CategoryReducer from "./reducers/category.reducer"
 import inscriptionReducer from "./reducers/inscription.reducer";
 import thunk from "redux-thunk";
 import AuthReducer from "./reducers/auth.reducer";
-import { PlacesReducer } from "./reducers/places.reducer";
+import { OffersReducer } from "./reducers/offers.reducer";
 
 const RootReducer = combineReducers({
     activities: ActivitiesReducer,
     categories: CategoryReducer,
     inscription: inscriptionReducer,
     auth: AuthReducer,
-    places: PlacesReducer,
+    offers: OffersReducer,
 })
 
 export default createStore(RootReducer, applyMiddleware(thunk))

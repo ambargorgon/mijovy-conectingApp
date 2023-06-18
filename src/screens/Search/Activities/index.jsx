@@ -1,14 +1,14 @@
 import { View, Text, FlatList } from "react-native";
 import React, { useEffect } from "react";
-import Product from "../../../components/Product";
 import styles from "./styles";
 import { useSelector, useDispatch } from "react-redux";
 import {
   filteredActivities,
   selectedActivity,
 } from "../../../store/actions/activity.action";
+import Activity from "../../../components/Activity";
 
-const Activities = ({ navigation, route }) => {
+const Activities = ({ navigation }) => {
   const filteredActivities_ = useSelector(
     (state) => state.activities.filteredActivities
   );
@@ -21,7 +21,7 @@ const Activities = ({ navigation, route }) => {
 
   const handleSelectedActivity = (item) => {
     dispatch(selectedActivity(item.id));
-    navigation.navigate("Detail", {
+    navigation.navigate("Offers", {
       item: item,
       name: item.title,
     });
@@ -29,7 +29,7 @@ const Activities = ({ navigation, route }) => {
 
   const renderActivities = ({ item }) => (
     <View style={styles.categoriesContainer}>
-      <Product item={item} onSelected={handleSelectedActivity} />
+      <Activity item={item} onSelected={handleSelectedActivity} />
     </View>
   );
 

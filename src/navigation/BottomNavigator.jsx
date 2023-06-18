@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
-import Calendar from "../screens/Calendar";
+import CalendarScreen from "../screens/Calendar";
 import Profile from "../screens/Profile";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StyleSheet, View } from "react-native";
@@ -46,11 +46,14 @@ const BottomNavigator = () => {
       />
       <Bottom.Screen
         name="Calendar"
-        component={Calendar}
+        component={CalendarScreen}
         options={{
+          title:"Calendario",
           tabBarIcon: ({ color }) => (
             <Ionicons name="calendar-outline" color={color} size={25} />
           ),
+          headerTitle: "Calendario",
+          headerTitleStyle: styles.headerTitleStyle,
         }}
       />
       <Bottom.Screen
@@ -60,8 +63,8 @@ const BottomNavigator = () => {
           tabBarIcon: ({ color }) => (
             <Ionicons name="person" color={color} size={25} />
           ),
-          headerTitle: "Profile",
-          headerTitleStyle: styles.headerTitleStyle
+          headerTitle: "Perfil",
+          headerTitleStyle: styles.headerTitleStyle,
         }}
       />
     </Bottom.Navigator>

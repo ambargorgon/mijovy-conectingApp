@@ -3,16 +3,10 @@ import { StyleSheet } from "react-native";
 import Colors from "../../constants/Colors";
 
 const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        backgroundColor: Colors.black,
-        alignItems: 'center'
-    },
-    text:{
-        color: Colors.white,
-        fontFamily: 'titleFont',
-        fontSize: 30,
-    }
-  });
+  container: {
+    flex: 1,
+    backgroundColor: Colors.secondary,
+  },
+});
 
-  export default styles
+export default styles;

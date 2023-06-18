@@ -12,6 +12,7 @@ const styles =  StyleSheet.create({
         shadowOffset: {width: 3, height:2},
         shadowRadius: 10,
         elevation: 5,
+        width: "100%",
     },
     container: {
         backgroundColor: Colors.fourth,

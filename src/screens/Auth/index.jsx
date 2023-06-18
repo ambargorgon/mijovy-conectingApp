@@ -11,7 +11,9 @@ import styles from "./style";
 import Card from "../../components/Card";
 import { useDispatch } from "react-redux";
 import { signUp } from "../../store/actions/auth.action";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import Input from "../../components/input";
+
 
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 
@@ -39,7 +41,7 @@ const formReducer = (state, action) => {
   return state;
 };
 
-const Login = ({ newStyles }) => {
+const SignIn = ({ newStyles, navigation }) => {
   const dispatch = useDispatch();
   const [error, setError] = useState(null);
 
@@ -86,12 +88,12 @@ const Login = ({ newStyles }) => {
     [dispatchFormState]
   );
 
+  const handleNavigation = () => {
+    navigation.navigate("LogIn");
+  };
+
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior="padding"
-      keyboardVerticalOffset={50}
-    >
+    <View style={styles.container}>
       <Text style={{ ...styles.text, ...newStyles }}>MIJOVY</Text>
       <View style={styles.inputContainer}>
         <Input
@@ -122,26 +124,32 @@ const Login = ({ newStyles }) => {
         />
         <Card otherStyles={styles.card}>
           <TouchableOpacity style={styles.cardText} onPress={handleSignUp}>
-            <Text>Registrarse</Text>
+            <Text style={{ fontWeight: "bold" }}>Registrarse</Text>
           </TouchableOpacity>
         </Card>
       </View>
       <View style={styles.signIn}>
-        <View style={styles.questionText}>
+        <TouchableOpacity
+          style={styles.questionText}
+          onPress={handleNavigation}
+        >
           <Text>Ya eres usuario?</Text>
-          <Text style={styles.logIn}>Inicia Sesion</Text>
-        </View>
+          <Text style={styles.SignIn}>Inicia Sesion</Text>
+        </TouchableOpacity>
         <View style={styles.mediaContainer}>
           <Card otherStyles={styles.mediaCard}>
+            <Ionicons name="logo-google" size={25} />
             <Text style={styles.signInText}>Ingresar con Google</Text>
           </Card>
           <Card otherStyles={styles.mediaCard}>
+            <Ionicons name="logo-facebook" size={25} />
+
             <Text style={styles.signInText}>Ingresar con Facebook</Text>
           </Card>
         </View>
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 
-export default Login;
+export default SignIn;
