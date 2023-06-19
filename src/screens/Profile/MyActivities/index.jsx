@@ -8,7 +8,7 @@ import styles from "./styles";
 
 const MyActivities = ({ navigation }) => {
   const dispatch = useDispatch();
-  
+
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [price, setPrice] = useState();
@@ -35,7 +35,6 @@ const MyActivities = ({ navigation }) => {
     );
     navigation.navigate("Home");
   };
-
 
   return (
     <ScrollView style={styles.container}>
@@ -132,7 +131,8 @@ const MyActivities = ({ navigation }) => {
 
 export default MyActivities;
 
-{/* <RNPickerSelect
+{
+  /* <RNPickerSelect
   onValueChange={(value) => setActivity(value)}
   useNativeAndroidPickerStyle={false}
   placeholder={{ label: "Actividad Correspondiente", value: null }}
@@ -149,5 +149,6 @@ export default MyActivities;
     { label: "Clases de Violin", value: "Clases de Violin" },
     { label: "Trekking", value: "Trekking" },
     { label: "Ciclismo", value: "Ciclismo" },
-  ]} */}
+  ]} */
+}
 // />

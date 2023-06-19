@@ -6,10 +6,6 @@ import Colors from "../../constants/Colors";
 import EventsList from "../../data/EventsList";
 import { datesList } from "../../data/EventsList";
 
-
-
-
-
 const CalendarScreen = () => {
   const [selectedEvent, setSelectedEvent] = useState({});
   const [modalVisible, setModalVisible] = useState(false);
