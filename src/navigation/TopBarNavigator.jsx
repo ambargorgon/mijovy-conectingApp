@@ -25,7 +25,7 @@ return (
             options={{tabBarLabel: 'Informacion'}}
         />
         <Tab.Screen 
-            name="MyActivites"
+            name="MyActivities"
             component={MyActivities}
             options={{tabBarLabel: 'Actividades'}}
         />

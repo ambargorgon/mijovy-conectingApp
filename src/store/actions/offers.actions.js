@@ -7,26 +7,26 @@ export const ADD_OFFER = "ADD_OFFER";
 export const LOAD_OFFER = "LOAD_OFFER"
 
 export const addOffer = (title, image, price, description, activity, target, location, author, email) => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
       const result = await insertOffer(
-        OffersList.title,
-        OffersList.image,
-        OffersList.price,
-        OffersList.description,
-        OffersList.activity,
-        OffersList.target,
-        OffersList.location,
-        OffersList.author,
-        OffersList.email
+        title,
+        image,
+        price,
+        description,
+        activity,
+        target,
+        location,
+        author,
+        email
       )
-      
-      dispatch({type: ADD_OFFER, payload: {title, image, price, description, activity, target, location, author, email}})
-      console.log("addoffer",result)
+
+      console.log('result', result)
     } catch (error) {
       console.log(error.message);
       throw error;
     }
+    dispatch({type: ADD_OFFER, payload: {title, image, price, description, activity, target, location, author, email}})
   };
 };
 
@@ -34,8 +34,8 @@ export const loadOffer = () => {
   return async dispatch => {
     try {
       const result = await fetchOffer()
+      console.log('resultLoad', result)
       dispatch({type: LOAD_OFFER, offers: result.rows._array})
-      console.log('actionresult', result)
     }catch (error) {
       throw error
     }

@@ -6,17 +6,20 @@ import EventsList from "../../data/EventsList";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Colors from "../../constants/Colors";
 import { useSelector, useDispatch } from "react-redux";
-
 import * as offerAction from "../../store/actions/offers.actions";
+import MyOfferItem from "../../components/MyOfferItem";
+import { loadOffer } from "../../store/actions/offers.actions";
 
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
-  const offers = useSelector(state => state.offers.offers)
+  const offers = useSelector((state) => state.offers.offers);
+  console.log("recibido offers", offers)
+
 
   useEffect(() => {
-  console.log("offers", offers)
-  }, [offers])
-    
+    dispatch(loadOffer());
+  }, []);
+
   const handleRenderItem = ({ item }) => (
     <View style={styles.itemContainer}>
       <Text style={styles.title}>{item.title}</Text>
@@ -26,13 +29,22 @@ const Home = ({ navigation }) => {
     </View>
   );
 
+  const handleRenderActivity = ({ item }) => (
+    <View>
+      <MyOfferItem
+        title={item.title}
+        image={item.image}
+        description={item.description}
+        onSelect={() =>
+          navigation.navigate("MyActivities", { offerId: item.id })
+        }
+      />
+    </View>
+  );
+
   const handleNavigation = () => {
     navigation.navigate("Calendar");
   };
-
-  useEffect(() => {
-    dispatch(offerAction.loadOffer());
-  }, []);
 
   return (
     <View style={styles.container}>
@@ -74,7 +86,6 @@ const Home = ({ navigation }) => {
           />
         </View>
       </View>
-
       <View style={styles.eventsContainer}>
         <Card otherStyles={styles.cardStyles}>
           <View style={styles.titleContainer}>
@@ -92,7 +103,7 @@ const Home = ({ navigation }) => {
         <View style={styles.list}>
           <FlatList
             data={offers}
-            renderItem={handleRenderItem}
+            renderItem={handleRenderActivity}
             keyExtractor={(item) => item.id}
           />
         </View>

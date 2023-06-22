@@ -4,7 +4,6 @@ import ImageSelector from "../../../components/ImageSelector";
 import { addOffer } from "../../../store/actions/offers.actions";
 import { useDispatch } from "react-redux";
 import styles from "./styles";
-// import RNPickerSelect from "react-native-picker-select";
 
 const MyActivities = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -34,6 +33,7 @@ const MyActivities = ({ navigation }) => {
       )
     );
     navigation.navigate("Home");
+    console.log("enviado")
   };
 
   return (

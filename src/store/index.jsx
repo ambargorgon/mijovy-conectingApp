@@ -4,7 +4,7 @@ import CategoryReducer from "./reducers/category.reducer"
 import inscriptionReducer from "./reducers/inscription.reducer";
 import thunk from "redux-thunk";
 import AuthReducer from "./reducers/auth.reducer";
-import { OffersReducer } from "./reducers/offers.reducer";
+import OffersReducer from "./reducers/offers.reducer";
 
 const RootReducer = combineReducers({
     activities: ActivitiesReducer,

@@ -6,17 +6,17 @@ const initialState = {
   offers: [],
 };
 
-export const OffersReducer = (state = initialState, action) => {
+const OffersReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_OFFER:
-      const newOffer = new Offer( action.payload.toString(), action.payload.title, action.payload.image, action.payload.price.toString(), action.payload.description, action.payload.activity.toString(), action.payload.target, action.payload.location, action.payload.author, action.payload.email);
-      console.log("Recibido")
+      const newOffer = new Offer( action.payload.id.toString(), action.payload.title, action.payload.image, action.payload.price.toString(), action.payload.description, action.payload.activity.toString(), action.payload.target, action.payload.location, action.payload.author, action.payload.email);
       return { ...state, offers: state.offers.concat(newOffer) };
 
     case LOAD_OFFER:
       return {
         ...state,
-        offers: action.offers.map(item => new Offer(
+        offers: action.offers.map(
+        item => new Offer(
           item.id.toString(),
           item.title,
           item.image,
@@ -34,3 +34,5 @@ export const OffersReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default OffersReducer
