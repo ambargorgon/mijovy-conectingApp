@@ -34,7 +34,7 @@ export const insertOffer = (
   const promise = new Promise((resolve, reject) => {
     db.transaction(tx => {
       tx.executeSql(
-        "INSERT INTO offer (title, image, price, description, activity, target, location, author, email) VALUES (?,?,?,?,?,?,?,?,?);"
+        "INSERT INTO offer (title, image, price, description, activity, target, location, author, email) VALUES (?,?,?,?,?,?,?,?,?)",
         [
           title,
           image,

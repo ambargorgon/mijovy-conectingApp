@@ -9,7 +9,7 @@ const initialState = {
 const OffersReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_OFFER:
-      const newOffer = new Offer( action.payload.id.toString(), action.payload.title, action.payload.image, action.payload.price.toString(), action.payload.description, action.payload.activity.toString(), action.payload.target, action.payload.location, action.payload.author, action.payload.email);
+      const newOffer = new Offer( action.payload.id, action.payload.title, action.payload.image, action.payload.price, action.payload.description, action.payload.activity, action.payload.target, action.payload.location, action.payload.author, action.payload.email);
       return { ...state, offers: state.offers.concat(newOffer) };
 
     case LOAD_OFFER:
@@ -17,12 +17,12 @@ const OffersReducer = (state = initialState, action) => {
         ...state,
         offers: action.offers.map(
         item => new Offer(
-          item.id.toString(),
+          item.id,
           item.title,
           item.image,
-          item.price.toString(),
+          item.price,
           item.description,
-          item.activity.toString(),
+          item.activity,
           item.target,
           item.location,
           item.author,

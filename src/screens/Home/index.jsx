@@ -6,7 +6,6 @@ import EventsList from "../../data/EventsList";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Colors from "../../constants/Colors";
 import { useSelector, useDispatch } from "react-redux";
-import * as offerAction from "../../store/actions/offers.actions";
 import MyOfferItem from "../../components/MyOfferItem";
 import { loadOffer } from "../../store/actions/offers.actions";
 
