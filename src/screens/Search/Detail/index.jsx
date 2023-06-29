@@ -1,40 +1,54 @@
 import { View, Text, Image, Button } from "react-native";
 import React from "react";
-import { useSelector } from "react-redux";
-import { StyleSheet } from "react-native";
-import { add_item } from "../../../store/actions/inscription.action";
 import { useDispatch } from "react-redux";
+import styles from "./styles";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import Colors from "../../../constants/Colors";
 
-const Detail = ({ navigation, offer, name }) => {
-  const dispatch = useDispatch();
+const Detail = ({ route, navigation }) => {
+  const { offer } = route.params
 
-  // const handleAddItem = ({item}) => {
-  //   dispatch(add_item(offer));
-  //   navigation.navigate("Inscription", {
-  //     activityId: offer.id,
-  //     name: offer.title,
-  //   })
-  // };
+  console.log("offer", offer)
 
   return (
-    <View>
-      {/* <Image style={styles.image} source={{ uri: product.image }} /> */}
-      <Text style={styles.title}>{name}</Text>
-      {/* <Text>${offer.price} el mes</Text> */}
-      {/* <Button title="Agregar al carrito" onPress={handleAddItem} /> */}
+    <View style={styles.container}>
+      <Image style={styles.image} source={{ uri: offer.image }} />
+      <Text style={styles.title}>{offer.title}</Text>
+      <Text style={styles.description}>{offer.description}</Text>
+      <View style={styles.detailContainer}>
+        <View style={styles.question}>
+          <Text style={styles.label}>Donde?</Text>
+          <Text>{offer.location}</Text>
+        </View>
+        <View style={styles.question}>
+          <Text style={styles.label}>Por cuanto?</Text>
+          {offer.price === 0 ?
+            <Text>Gratis</Text>
+            :
+            <Text>{offer.price} al mes</Text>}
+        </View>
+        <View style={styles.question}>
+          <Text style={styles.label}>Para quienes?</Text>
+          <Text>{offer.target}</Text>
+        </View>
+      </View>
+      <View style={styles.contactContainer}>
+        <Text style={{ fontSize: 20, alignSelf: 'center' }}>Contacto</Text>
+        <View style={styles.dataContainer}>
+          <Ionicons name="at" color={Colors.primary} size={25} />
+          <Text>{offer.email}</Text>
+        </View>
+        <View style={styles.dataContainer}>
+          <Ionicons name="call" color={Colors.primary} size={25} />
+          <Text>{offer.celular}</Text>
+        </View>
+        <View style={styles.dataContainer}>
+          <Ionicons name="person" color={Colors.primary} size={25} />
+          <Text>{offer.author}</Text>
+        </View>
+      </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  title: {
-    marginTop: 40,
-  },
-  image: {
-    borderRadius: 20,
-    width: "100%",
-    height: "60%",
-  },
-});
 
 export default Detail;

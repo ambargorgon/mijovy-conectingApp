@@ -3,7 +3,6 @@ import Search from "../screens/Search";
 import Activities from "../screens/Search/Activities";
 import Colors from "../constants/Colors";
 import Detail from "../screens/Search/Detail";
-import Inscripcion from "../screens/Search/Inscripcion";
 import Locations from "../screens/Search/Locations";
 import Offers from "../screens/Search/Offers";
 
@@ -22,14 +21,12 @@ const CategoryNavigator = () => {
         {  title: route.params.name} 
         ) }/>
         <Stack.Screen name="Offers" component={Offers}  options={({route})=>(
-          {  title: route.params.name} 
+          {  title: "Ofertas"} 
           ) }/>
       <Stack.Screen name="Detail" component={Detail}  options={({route})=>(
-        {  title: route.params.name} 
+        {  title: "Detalle"} 
         ) }/>
-      <Stack.Screen name="Inscription" component={Inscripcion}  options={({route})=>(
-        {  title: route.params.name} 
-        ) }/>
+    
     </Stack.Navigator>
   );
 };

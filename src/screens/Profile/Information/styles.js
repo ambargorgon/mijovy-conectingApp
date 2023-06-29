@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
   },
   nameContainer: {
     flexDirection: "column",
+    alignItems: 'flex-start',
+    alignContent: "flex-start",
     gap: 5,
   },
   profileImage: {
@@ -37,30 +39,55 @@ const styles = StyleSheet.create({
     padding: 13,
     gap: 10,
   },
-  dataContainer: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    height: 60,
-    borderBottomWidth: 1,
-    borderColor: "#ccc",
-    gap: 5,
-    margin: 0,
 
-  },
   data: {
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
     flexDirection: "row",
-    borderLeftWidth: 1,
-    borderLeftColor: "#ccc",
-    width: 200,
-    height: '100%',
-    margin: 0,
     gap: 5,
   },
+  modal: {
+    margin: 20,
+    borderRadius: 20,
+    width: "85%",
+    height: "40%",
+    padding: 15,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+  },
+  button:{
+    alignSelf: "flex-end",
+  },
+  modalContainer: {
+    position: "absolute",
+    width: 300,
+    height: 300,
+    borderRadius: 20,
+    alignSelf: "center",
+    justifyContent: "center",
+    elevation: 5,
+  }, 
+  viewContainer:{
+    elevation: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+    width: 800,
+    height: 500
+  },
+  image:{
+    width: 80,
+    height: 80,
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: Colors.terciary,
+    borderWidth: 1,
+    borderRadius: 50,
+  }
 });
 
 export default styles;

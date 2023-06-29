@@ -9,7 +9,7 @@ import { datesList } from "../../data/EventsList";
 const CalendarScreen = () => {
   const [selectedEvent, setSelectedEvent] = useState({});
   const [modalVisible, setModalVisible] = useState(false);
-  
+
   const handleDayPress = (day) => {
     const date = day.dateString;
     const matchEvent = EventsList.find((event) => event.date === date);
@@ -24,9 +24,9 @@ const CalendarScreen = () => {
 
   console.log('dates', datesList)
   let dates = {}
-  
-  datesList.forEach( 
-    (item )=> {dates[item] = {selected: true,  marked: true, selectedColor: Colors.primary}}
+
+  datesList.forEach(
+    (item) => { dates[item] = { selected: true, marked: true, selectedColor: Colors.primary } }
   )
   return (
     <View style={styles.container}>
@@ -52,7 +52,7 @@ const CalendarScreen = () => {
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <TouchableOpacity
-                style={[styles.button]}
+                style={styles.button}
                 onPress={() => setModalVisible(!modalVisible)}
               >
                 <Text style={styles.textStyle}>X</Text>

@@ -4,11 +4,12 @@ import Home from "../screens/Home";
 import CalendarScreen from "../screens/Calendar";
 import Profile from "../screens/Profile";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { StyleSheet, View } from "react-native";
 import Colors from "../constants/Colors";
 import CategoryNavigator from "./CategoryNavigator";
+import { StyleSheet } from "react-native";
 
 const BottomNavigator = () => {
+
   const Bottom = createBottomTabNavigator();
 
   return (

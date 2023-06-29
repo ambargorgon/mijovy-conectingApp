@@ -1,31 +1,40 @@
-// INPUTS
+// MY ACTIVITIES
 import { StyleSheet } from "react-native";
 import Colors from "../../../constants/Colors";
 
 const styles = StyleSheet.create({
-  container: {
+  view: {
     flex: 1,
-    backgroundColor: Colors.white,
-    flexDirection: "column",
-    gap: 20,
-    marginBottom: 150,
+    marginBottom: 60,
   },
-  inputContainer: {
-    padding: 15,
-    borderBottomWidth: 1,
-    borderColor: "#ccc",
+  container:{
+    flex: 1,
+
   },
-  inputLabel: {
-    fontWeight: "bold",
-    fontSize: 20,
+  container2: {
+    flex: 1,
+    alignContent: 'flex-end',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    elevation: 10,
   },
-  input: {
-    borderBottomWidth: 1,
-    borderColor: "#ccc",
-    padding: 5,
-    marginHorizontal: 20,
+  touchable:{
+    backgroundColor: Colors.primary,
+    borderRadius: 50,
+    width: 55,
+    height: 55,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 35,
+  },
+  alert: {
     fontSize: 18,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    fontWeight: '600',
+    paddingTop: 50,
   },
+  
 });
 
 export default styles;

@@ -1,5 +1,5 @@
-import { Text, Button, View, FlatList } from "react-native";
-import React, { useLayoutEffect, useEffect } from "react";
+import { Text, Button, View, FlatList, TouchableOpacity } from "react-native";
+import React, { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import styles from "./style";
 import EventsList from "../../data/EventsList";
@@ -12,8 +12,6 @@ import { loadOffer } from "../../store/actions/offers.actions";
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
   const offers = useSelector((state) => state.offers.offers);
-  console.log("recibido offers", offers)
-
 
   useEffect(() => {
     dispatch(loadOffer());
@@ -35,28 +33,18 @@ const Home = ({ navigation }) => {
         image={item.image}
         description={item.description}
         onSelect={() =>
-          navigation.navigate("MyActivities", { offerId: item.id })
+          navigation.navigate('Profile', { screen: 'ActivityNavigator', params: { screen: 'EditActivity' } })
         }
       />
     </View>
   );
 
   const handleNavigation = () => {
-    navigation.navigate("Calendar");
+    navigation.navigate("Calendar")
   };
 
   return (
     <View style={styles.container}>
-      <Card
-        otherStyles={{
-          borderRadius: 30,
-          height: 35,
-          padding: 0,
-          marginBottom: 10,
-        }}
-      >
-        <Text style={styles.text}>Tu Locacion</Text>
-      </Card>
       <View style={styles.eventsContainer}>
         <Card otherStyles={styles.cardStyles}>
           <View style={styles.titleContainer}>
@@ -100,11 +88,17 @@ const Home = ({ navigation }) => {
           </View>
         </Card>
         <View style={styles.list}>
-          <FlatList
-            data={offers}
-            renderItem={handleRenderActivity}
-            keyExtractor={(item) => item.id}
-          />
+          {!offers ?
+            <FlatList
+              data={offers}
+              renderItem={handleRenderActivity}
+              keyExtractor={(item) => item.id}
+            />
+            : <>
+              <Text style={styles.noItem}>Aún no has agregado actividades</Text>
+              <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Profile', { screen: 'ActivityNavigator', params: { screen: 'NewActivity' } })}><Text>Agregar</Text></TouchableOpacity>
+            </>
+          }
         </View>
       </View>
     </View>

@@ -22,8 +22,8 @@ const Activities = ({ navigation }) => {
   const handleSelectedActivity = (item) => {
     dispatch(selectedActivity(item.id));
     navigation.navigate("Offers", {
-      item: item,
-      name: item.title,
+      activity: item,
+  
     });
   };
 

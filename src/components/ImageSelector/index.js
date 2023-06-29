@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import Colors from "../../constants/Colors";
 
-const ImageSelector = (props) => {
+const ImageSelector = (props, newStyles) => {
   const [pickedUri, setPickedUri] = useState();
 
   const verifyPermissons = async () => {
@@ -36,7 +36,7 @@ const ImageSelector = (props) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.preview}>
+      <View style={{...styles.preview, ...newStyles}}>
         {!pickedUri ? (
           <TouchableOpacity onPress={handlerTakeImage}>
             <Text style={styles.text}>+</Text>

@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, Alert, Button } from "react-native";
-import React, { useState, useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
 import * as Location from "expo-location";
+import { StyleSheet, View, Alert, Button, Text } from "react-native";
+import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import MapPreview from "../MapPreview";
 
 const LocationSelector = ({ onLocation }) => {
@@ -10,6 +10,7 @@ const LocationSelector = ({ onLocation }) => {
 
   const verifyPermissions = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
+
     if (status !== "granted") {
       Alert.alert("Permisos Insuficientes", [{ text: "Ok" }]);
       return false;
@@ -17,15 +18,13 @@ const LocationSelector = ({ onLocation }) => {
     return true;
   };
 
-  useEffect(() => {
-    handleGetLocation();
-  }, []);
-
+  
   const handleGetLocation = async () => {
     const isLocationOk = await verifyPermissions();
     if (!isLocationOk) return;
-
+    
     const location = await Location.getCurrentPositionAsync();
+    console.log("location", location)
 
     setPicked({
       lat: location.coords.latitude,
@@ -37,12 +36,13 @@ const LocationSelector = ({ onLocation }) => {
     });
   };
 
+
+
   return (
     <View style={styles.container}>
       <MapPreview location={picked} newStyles={styles.preview}>
-        <Text>Ubicacion en proceso...</Text>
+        <Button title="Obtener Mi Ubicacion" onPress={handleGetLocation} />
       </MapPreview>
-      {/* <Button title="Obtener Ubicacion" onPress={handleGetLocation} /> */}
     </View>
   );
 };

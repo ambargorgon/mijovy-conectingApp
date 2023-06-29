@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 100,
-    paddingTop: 100,
     color: Colors.secondary,
     textShadowColor: Colors.black,
     textShadowOffset: { width: 1, height: 5 },
@@ -47,7 +46,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   signIn: {
-    marginTop: 50,
     gap: 20,
     width: "100%",
     alignItems: "center",
@@ -62,8 +60,7 @@ const styles = StyleSheet.create({
   mediaCard: {
     flexDirection: 'row',
     borderRadius: 50,
-    width: "100%",
-    paddingHorizontal: 30,
+    width: "80%",
   },
   mediaContainer: {
     flexDirection: "column",

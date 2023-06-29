@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text} from "react-native";
+import { View } from "react-native";
 import styles from "./style";
 import MyTabs from "../../navigation/TopBarNavigator"
+
 
 const Profile = () => {
   return (

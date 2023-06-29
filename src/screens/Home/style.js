@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
   eventsContainer: {
     width: "100%",
     height: "30%",
+    marginTop: 20,
   },
   title: {
     fontWeight: "bold",
@@ -58,6 +59,25 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignContent: 'space-between',
     justifyContent: 'space-between',
+  },
+  noItem: {
+    alignSelf: "center",
+    marginTop: 20,
+    fontSize: 18,
+    fontWeight: '600',
+  },
+  button: {
+    alignSelf: 'center',
+    backgroundColor: Colors.secondary,
+    padding: 13,
+    borderRadius: 20,
+    marginTop: 30,
+    paddingHorizontal: 25,
+    shadowColor: Colors.black,
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 10,
+    shadowOpacity: 0.3,
+    elevation: 5,
   }
 });
 export default styles;

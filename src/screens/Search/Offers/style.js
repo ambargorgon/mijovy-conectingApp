@@ -10,14 +10,12 @@ const styles = StyleSheet.create({
     paddingBottom: 25,
     marginBottom: 50,
     backgroundColor: Colors.terciary,
-    alignItems: "center",
     width: "100%",
   },
   categoriesContainer: {
     padding: 10,
     height: 430,
     width: 360,
-    width: "100%",
   },
   text: {
     fontSize: 18,

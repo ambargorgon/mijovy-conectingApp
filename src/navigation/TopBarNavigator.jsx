@@ -1,8 +1,8 @@
 import * as React from "react"
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"
-import MyActivities from "../screens/Profile/MyActivities"
 import Information from "../screens/Profile/Information"
 import { Colors } from "react-native/Libraries/NewAppScreen"
+import ActivityNavigator from './ActivityNavigator'
 const Tab = createMaterialTopTabNavigator();
 
 const MyTabs = () => {
@@ -17,7 +17,6 @@ return (
             animationEnabled: true,
            
         }}
-        
     >
         <Tab.Screen 
             name="Information"
@@ -25,9 +24,9 @@ return (
             options={{tabBarLabel: 'Informacion'}}
         />
         <Tab.Screen 
-            name="MyActivities"
-            component={MyActivities}
-            options={{tabBarLabel: 'Actividades'}}
+            name="ActivityNavigator"
+            component={ActivityNavigator}
+            options={{tabBarLabel: 'Mis Actividades'}}
         />
 
     </Tab.Navigator>

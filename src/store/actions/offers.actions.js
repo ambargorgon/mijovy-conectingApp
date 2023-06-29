@@ -1,6 +1,5 @@
 import * as FileSystem from "expo-file-system";
 import { insertOffer, fetchOffer } from "../../../db";
-import OffersList from "../../data/OffersList";
 
 
 export const ADD_OFFER = "ADD_OFFER";

@@ -1,12 +1,13 @@
 import { View} from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import LocationSelector from "../../../components/LocationSelector"
 
 
 const Locations = () => {
+  const [location, setLocation] =useState();
   return (
     <View>
-      <LocationSelector />
+      <LocationSelector onLocation={setLocation}/>
     </View>
   )
 }
