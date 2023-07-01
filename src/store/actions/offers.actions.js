@@ -5,7 +5,7 @@ import { insertOffer, fetchOffer } from "../../../db";
 export const ADD_OFFER = "ADD_OFFER";
 export const LOAD_OFFER = "LOAD_OFFER"
 
-export const addOffer = (title, image, price, description, activity, target, location, author, email) => {
+export const addOffer = (title, image, price, description, activity, target, location) => {
   return async dispatch => {
     try {
       const result = await insertOffer(
@@ -16,16 +16,13 @@ export const addOffer = (title, image, price, description, activity, target, loc
         activity,
         target,
         location,
-        author,
-        email
       )
-
       console.log('result', result)
     } catch (error) {
       console.log(error.message);
       throw error;
     }
-    dispatch({type: ADD_OFFER, payload: {title, image, price, description, activity, target, location, author, email}})
+    dispatch({type: ADD_OFFER, payload: {title, image, price, description, activity, target, location}})
   };
 };
 

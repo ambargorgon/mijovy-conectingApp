@@ -4,7 +4,6 @@ import store from "./src/store";
 import Navigator from "./src/navigation";
 import {init} from "./db"
 
-
 init()
 .then(()=>  console.log("base de datos iniciada"))
 .catch((err)=> {

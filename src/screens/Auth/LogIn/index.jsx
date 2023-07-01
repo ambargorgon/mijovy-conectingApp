@@ -1,30 +1,57 @@
 import {
-        View,
-        Text,
-        TouchableOpacity,
-        KeyboardAvoidingView,
-      } from "react-native";
-import React, {useState } from "react";
+  View,
+  Text,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  Alert,
+  TextInput
+} from "react-native";
+import React, { useState } from "react";
 import styles from "./style";
 import Card from "../../../components/Card";
 import Input from "../../../components/input";
-  
-  const LogIn = ({ newStyles}) => {
-    const [error, setError] = useState(null);
-  
-  const handleChange = () => {
-    console.log("input")
+import auth from '@react-native-firebase/auth'
+import { signInWithEmailAndPassword } from '@react-native-firebase/auth'
+const LogIn = ({ newStyles }) => {
+  const [error, setError] = useState(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('')
+
+  const signIn = async () => {
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password)
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+      Alert.alert("Email o Contrasenia incorrectos")
+    } finally {
+    }
   }
 
-    return (
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior="padding"
-        keyboardVerticalOffset={50}
-      >
-        <View style={styles.inputContainer}>
+
+  return (
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior="padding"
+      keyboardVerticalOffset={50}
+    >
+      <View style={styles.inputContainer}>
         <Text style={{ ...styles.text, ...newStyles }}>INICIAR SESION</Text>
-          <Input
+        <TextInput style={styles.input}
+          value={email}
+          placeholder="Email"
+          autoCapitalize="none"
+          onChangeText={(text) => setEmail(text)}
+        />
+        <TextInput style={styles.input}
+          secureTextEntry={true}
+          value={password}
+          placeholder="Contraseña"
+          autoCapitalize="none"
+          onChangeText={(text) => setPassword(text)}
+        />
+
+        {/* <Input
             id="email"
             label="Email"
             keyboardType="email-address"
@@ -47,16 +74,15 @@ import Input from "../../../components/input";
             secureTextEntry
             initialValue=""
             onInputChange={handleChange}
-          />
-          <Card otherStyles={styles.card}>
-            <TouchableOpacity style={styles.cardText}>
-              <Text>Iniciar Sesion</Text>
-            </TouchableOpacity>
-          </Card>
-        </View>
-      </KeyboardAvoidingView>
-    );
-  };
-  
-  export default LogIn;
-  
+          /> */}
+        <Card otherStyles={styles.card}>
+          <TouchableOpacity style={styles.cardText} onPress={signIn}>
+            <Text>Iniciar Sesion</Text>
+          </TouchableOpacity>
+        </Card>
+      </View>
+    </KeyboardAvoidingView>
+  );
+};
+
+export default LogIn;

@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   },
   container:{
     flex: 1,
-
   },
   container2: {
     flex: 1,
@@ -34,7 +33,27 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     paddingTop: 50,
   },
-  
+  image: {
+    width: 80,
+    height: 80,
+    marginRight: 10,
+  },
+  title:{
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  itemContainer:{
+    flexDirection: 'row',
+    marginBottom: 10,
+    paddingBottom: 10,
+    height: 90,
+    alignContent: 'center',
+    borderBottomWidth: 1,
+    borderColor: '#ccc'
+  },
+  listContainer:{
+    margin: 20,
+  }
 });
 
 export default styles;

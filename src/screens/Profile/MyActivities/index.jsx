@@ -1,48 +1,60 @@
-import { View, Text, Image, FlatList } from "react-native";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
+import React, { useEffect } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { TouchableOpacity } from "react-native";
 import styles from "./styles"
+import { useDispatch,  useSelector  } from "react-redux";
+import { loadOffer } from "../../../store/actions/offers.actions";
 
 const MyActivities = ({ navigation }) => {
+  const dispatch = useDispatch();
 
   const offers = useSelector((state) => state.offers.offers);
+
+  useEffect(() => {
+    dispatch(loadOffer());
+  }, []);
+
+const handleDetail = (item) => {
+  navigation.navigate("Search", {screen:"Detail",  params: { offer: item }})
+}
+
+  const handleRenderItem = ({ item }) => (
+    <TouchableOpacity style={styles.itemContainer} onPress={()=>handleDetail(item)}>
+      <View> 
+        <Image style={styles.image} source={{ uri: item.image }} />
+      </View>
+      <View>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text>{item.description}</Text>
+        <Text>{item.location}</Text>
+        <Text>{`$${item.price}`}</Text>
+      </View>
+    </TouchableOpacity>
+  )
 
   const handleNavigation = () => {
     navigation.navigate('NewActivity')
   }
 
-  const handleRenderActivity = ({ item }) => (
-    <View>
-      <View>
-        <Text>{item.title}</Text>
-        <Text>{item.description}</Text>
-      </View>
-      <View>
-        <Ionicons name="pencil-sharp" size={25} />
-      </View>
-    </View>
-  );
-
-
   return (
     <View style={styles.view}>
       <View style={styles.container}>
-        {offers !== [] ?
+        {offers === [] ?
           <Text style={styles.alert}> Aun no has añadido actividades</Text>
           :
-          <FlatList
-            data={offers}
-            renderItem={handleRenderActivity}
-            keyExtractor={(item) => item.id}
-          />
+          <View style={styles.listContainer}>
+            <FlatList
+              data={offers}
+              renderItem={handleRenderItem}
+              keyExtractor={(item) => item.title}
+            />
+          </View>
         }
       </View>
       <View style={styles.container2}>
-      <TouchableOpacity style={styles.touchable} onPress={handleNavigation}>
-        <Ionicons name="add" size={28} color={"white"} />
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.touchable} onPress={handleNavigation}>
+          <Ionicons name="add" size={28} color={"white"} />
+        </TouchableOpacity>
       </View>
     </View>
   );

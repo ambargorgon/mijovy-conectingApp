@@ -59,14 +59,18 @@ const styles = StyleSheet.create({
   },
   mediaCard: {
     flexDirection: 'row',
+    gap: 5,
     borderRadius: 50,
-    width: "80%",
+    width: "100%",
+    alignContent: 'center',
+    justifyContent: 'center'
   },
   mediaContainer: {
-    flexDirection: "column",
-    gap: 20,
-    width: 400,
-    alignItems: "center"
+    flexDirection: "row",
+    width: 520,
+    alignItems: "center",
+    justifyContent: 'center',
+  
   },
   signInText: {
     fontSize: 16,

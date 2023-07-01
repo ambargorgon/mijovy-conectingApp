@@ -12,21 +12,26 @@ const CategoryNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: Colors.secondary },
-        headerTitleStyle: { color: Colors.primary, fontFamily: "leagueSpartanBold" , fontSize: 25, },
+        headerTitleStyle: { color: Colors.primary, fontFamily: "leagueSpartanBold", fontSize: 25, },
       }}
     >
-      <Stack.Screen name="Categories" component={Search} options={{title:"Categorias"}}/>
-      <Stack.Screen name="Mapa" component={Locations}/>
-      <Stack.Screen name="Activities" component={Activities}  options={({route})=>(
-        {  title: route.params.name} 
-        ) }/>
-        <Stack.Screen name="Offers" component={Offers}  options={({route})=>(
-          {  title: "Ofertas"} 
-          ) }/>
-      <Stack.Screen name="Detail" component={Detail}  options={({route})=>(
-        {  title: "Detalle"} 
-        ) }/>
-    
+      <Stack.Screen name="Categories" component={Search} options={{ title: "Categorias" }} />
+      <Stack.Screen name="Mapa" component={Locations} />
+      <Stack.Screen name="Activities" component={Activities} options={({ route }) => (
+        { title: route.params.name }
+      )} />
+      <Stack.Screen name="Offers" component={Offers} options={({ route }) => (
+        { title: "Ofertas" }
+      )} />
+      <Stack.Screen name="Detail" component={Detail} options={({ route }) => (
+        {
+          title: "Detalle",
+          tabBarIcon: () => (
+            <Ionicons name="arrow-back" color={Colors.white} size={25} onPress={() => navigation.navigate("Categories")} />
+          )
+        }
+      )} />
+
     </Stack.Navigator>
   );
 };

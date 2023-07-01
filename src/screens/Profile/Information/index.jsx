@@ -40,7 +40,7 @@ const Information = () => {
     dispatch(signOut())
   }
 
-  console.log("Information", user)
+  // console.log("Information", user)
   console.log("Information Google", googleUser)
   
   return (

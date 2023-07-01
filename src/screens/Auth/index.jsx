@@ -27,7 +27,6 @@ const SignIn = ({ newStyles, navigation }) => {
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber
-
   }, [])
 
   if (user){
@@ -54,7 +53,7 @@ const SignIn = ({ newStyles, navigation }) => {
       console.log("userGoogleObjeto", user)
       auth().onAuthStateChanged(auth, (user) => {
         if (user) {
-          setUser(true);
+          setUser(user);
           if (user) {
             AsyncStorage.setItem(
               "UserLoggedInData",
@@ -73,6 +72,8 @@ const SignIn = ({ newStyles, navigation }) => {
 
     console.log(user)
   }
+
+  if(initializing)return null
 
   const formReducer = (state, action) => {
     console.log(action);
@@ -128,6 +129,7 @@ const SignIn = ({ newStyles, navigation }) => {
 
   //Enviar formulario
   const handleSignUp = () => {
+    // createUserWithEmailAndPassword(auth, formState.inputValues.email, formState.inputValues.password)
     const user = { email: formState.inputValues.email, password: formState.inputValues.password, name: formState.inputValues.name }
     console.log("user recibido", user)
     if (formState.formIsValid) {
@@ -210,7 +212,7 @@ const SignIn = ({ newStyles, navigation }) => {
         </TouchableOpacity>
         <View style={styles.mediaContainer}>
           <Card otherStyles={styles.mediaCard}>
-            <TouchableOpacity onPress={() => onGoogleButtonPress().then(() =>
+            <TouchableOpacity  styles={styles.mediaCard} onPress={() => onGoogleButtonPress().then(() =>
               console.log("Sign in with Google"))}>
               <Ionicons name="logo-google" size={25} />
               <Text style={styles.signInText}>Ingresar con Google</Text>

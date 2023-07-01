@@ -1,14 +1,22 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
+const MyOfferItem = ({ title, image, description, location, price, item }) => {
+ const navigation = useNavigation()
+ 
+  const handleDetail = (item) => {
+    navigation.navigate("Search", {screen:"Detail",  params: { offer: item }})
+  }
 
-const MyOfferItem = ({ title, image, description, onSelect }) => {
   return (
     <View>
-      <TouchableOpacity style={styles.offerItem} onPress={onSelect}>
-        {/* <Image style={styles.image}/> */}
+      <TouchableOpacity style={styles.offerItem} onPress={()=>handleDetail(item)}>
+        <Image style={styles.image} source={{ uri: image }} />
         <View style={styles.info}>
           <Text style={styles.title}>{title}</Text>
-          <Text style={styles.description}>{description}</Text>
+          <Text>{description}</Text>
+          <Text>{location}</Text>
+          <Text>{`$${price}`}</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -40,7 +48,6 @@ const styles = StyleSheet.create({
   title: {
     color: "black",
     fontSize: 18,
-    marginBottom: 16,
   },
   description: {
     color: "#777",

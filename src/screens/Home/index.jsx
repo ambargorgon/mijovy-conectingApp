@@ -13,9 +13,13 @@ const Home = ({ navigation }) => {
   const dispatch = useDispatch();
   const offers = useSelector((state) => state.offers.offers);
 
+  console.log(offers)
+
   useEffect(() => {
     dispatch(loadOffer());
   }, []);
+
+
 
   const handleRenderItem = ({ item }) => (
     <View style={styles.itemContainer}>
@@ -27,14 +31,14 @@ const Home = ({ navigation }) => {
   );
 
   const handleRenderActivity = ({ item }) => (
-    <View>
+    <View >
       <MyOfferItem
+        item={item}
         title={item.title}
         image={item.image}
         description={item.description}
-        onSelect={() =>
-          navigation.navigate('Profile', { screen: 'ActivityNavigator', params: { screen: 'EditActivity' } })
-        }
+        location={item.location}
+        price={item.price}
       />
     </View>
   );
@@ -69,7 +73,7 @@ const Home = ({ navigation }) => {
           <FlatList
             data={EventsList}
             renderItem={handleRenderItem}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => item.title}
           />
         </View>
       </View>
@@ -88,11 +92,11 @@ const Home = ({ navigation }) => {
           </View>
         </Card>
         <View style={styles.list}>
-          {!offers ?
+          {offers ?
             <FlatList
               data={offers}
               renderItem={handleRenderActivity}
-              keyExtractor={(item) => item.id}
+              keyExtractor={(item) => item.title}
             />
             : <>
               <Text style={styles.noItem}>Aún no has agregado actividades</Text>

@@ -5,7 +5,6 @@ import inscriptionReducer from "./reducers/inscription.reducer";
 import thunk from "redux-thunk";
 import AuthReducer from "./reducers/auth.reducer";
 import OffersReducer from "./reducers/offers.reducer";
-import LocationReducer from "./reducers/location.reducer"
 
 const RootReducer = combineReducers({
     activities: ActivitiesReducer,
@@ -13,7 +12,6 @@ const RootReducer = combineReducers({
     inscription: inscriptionReducer,
     auth: AuthReducer,
     offers: OffersReducer,
-    location: LocationReducer,
 })
 
 export default createStore(RootReducer, applyMiddleware(thunk))
