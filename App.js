@@ -4,13 +4,13 @@ import store from "./src/store";
 import Navigator from "./src/navigation";
 import {init} from "./db"
 
+
 init()
-.then(()=>  console.log("base de datos iniciada"))
+.then(()=> console.log("base de datos iniciada"))
 .catch((err)=> {
   console.log("Base de datos no creada")
   console.log(err.message)
 })
-
 
 
 export default function App() {

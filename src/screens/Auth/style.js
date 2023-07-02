@@ -57,20 +57,22 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center'
   },
-  mediaCard: {
-    flexDirection: 'row',
-    gap: 5,
-    borderRadius: 50,
-    width: "100%",
-    alignContent: 'center',
-    justifyContent: 'center'
-  },
   mediaContainer: {
-    flexDirection: "row",
-    width: 520,
+    width: 420,
     alignItems: "center",
+  },
+  mediaCard: {
+    flexDirection: "row",
+    width: "100%",
+    borderRadius: 50,
+    // alignContent: 'center',
+    // justifyContent: 'center',
+  },
+  mediaCardButton: {
+    width: "100%",
+    flexDirection: 'row',
     justifyContent: 'center',
-  
+    alignContent: 'center',
   },
   signInText: {
     fontSize: 16,

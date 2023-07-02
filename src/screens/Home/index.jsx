@@ -92,13 +92,14 @@ const Home = ({ navigation }) => {
           </View>
         </Card>
         <View style={styles.list}>
-          {offers ?
+          {offers !== []?
             <FlatList
               data={offers}
               renderItem={handleRenderActivity}
               keyExtractor={(item) => item.title}
             />
-            : <>
+            : 
+            <>
               <Text style={styles.noItem}>Aún no has agregado actividades</Text>
               <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Profile', { screen: 'ActivityNavigator', params: { screen: 'NewActivity' } })}><Text>Agregar</Text></TouchableOpacity>
             </>
