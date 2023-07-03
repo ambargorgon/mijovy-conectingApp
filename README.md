@@ -1,4 +1,4 @@
-Mijovy
+#Mijovy
 Mijovy es una app para encontrar nuevos Hobbies y lugares para realizarlos en tu ciudad.
 Está destinada a aquellas personas que quieren encontrar esa actividad, ya sea artística, deportiva, o reacreativa y no saben dónde buscar.
 
