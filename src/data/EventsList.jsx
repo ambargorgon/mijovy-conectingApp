@@ -7,7 +7,7 @@ const EventsList = [
         author: "Escuela de Musica",
         time: 'Martes 16, a las 20hs.',
         category: 5,
-        date: '2023-06-16'
+        date: '2023-12-16'
 
     },
     {   
@@ -18,7 +18,7 @@ const EventsList = [
         author: "Yoga Academy",
         time: 'Miercoles 3 de Julio, a las 10hs.',
         category: 3,
-        date: '2023-07-03'
+        date: '2023-12-03'
     },
     {   
         id: 3,
@@ -27,7 +27,7 @@ const EventsList = [
         location: "Gimansio de Deportes",
         author: "Equipo de Handball",
         time: 'Sabado 19 de Julio, a las 15hs.',
-        date: '2023-07-19'
+        date: '2023-12-19'
     },
     
     

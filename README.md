@@ -12,3 +12,11 @@ de tu ciudad. Y por otro lado, todas las actividades publicadas, divididas en ca
 Por último, en el apartado de perfil, podrás encontrar tus datos personales, y agregar nuevas actividades si así lo deseas.
 
 App construida con React Native en su totalidad. Con conexión a Firebase, y utilizando la librería Redux.
+
+![Pantalla Login](./src/images/2.png)
+
+![Pantalla Home](./src/images/1.png)
+
+![Pantalla Busqueda](./src/images/3.png)
+
+![Pantalla Calendario](./src/images/4.png)
