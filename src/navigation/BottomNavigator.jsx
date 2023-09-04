@@ -7,9 +7,11 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import Colors from "../constants/Colors";
 import CategoryNavigator from "./CategoryNavigator";
 import { StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const BottomNavigator = () => {
 
+  const navigation = useNavigation()
   const Bottom = createBottomTabNavigator();
 
   return (
@@ -39,7 +41,7 @@ const BottomNavigator = () => {
         component={CategoryNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name="search-sharp" color={color} size={25} />
+            <Ionicons name="search-sharp" color={color} size={25} onPress={navigation.navigate("Search")}/>
           ),
           headerShown: false,
           headerTitleStyle: styles.headerTitleStyle,

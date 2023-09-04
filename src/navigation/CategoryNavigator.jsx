@@ -10,6 +10,7 @@ const CategoryNavigator = () => {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator
+      initialRouteName="Information"
       screenOptions={{
         headerStyle: { backgroundColor: Colors.secondary },
         headerTitleStyle: { color: Colors.primary, fontFamily: "leagueSpartanBold", fontSize: 25, },

@@ -1,3 +1,4 @@
+import { Alert } from "react-native";
 import { URL_AUTH_SIGNUP } from "../../constants/database";
 
 export const SIGNUP = "SIGNUP";
@@ -26,6 +27,7 @@ export const signUp = (email, password, name) => {
         userId: data.localId,
       })
     } catch (error) {
+      Alert.alert("Error, chequea que los datos sean correctos")
       console.log(error)
     }
   };
